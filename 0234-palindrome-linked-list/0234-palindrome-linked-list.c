@@ -29,6 +29,11 @@ bool isPalindrome(struct ListNode* head) {
         slow=slow->next;
         fast=fast->next->next;
     }
+    
+    if(fast!=NULL){
+        slow=slow->next;
+    }
+    
     slow=reverse(slow);
     fast=head;
     
