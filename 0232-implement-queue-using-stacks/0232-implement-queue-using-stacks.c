@@ -17,11 +17,9 @@ Stack *stackCreate(int size) {
 
 void stackPush(Stack *stack, int x) {
     if (stack->top == stack->size - 1) {
-        // The stack is full, so resize it to make it larger
         int new_size = stack->size * 2;
         stack->arr = realloc(stack->arr, new_size * sizeof(int));
         if (stack->arr == NULL) {
-            // realloc failed, handle the error
             return;
         }
         stack->size = new_size;
@@ -32,7 +30,6 @@ void stackPush(Stack *stack, int x) {
 
 int stackPop(Stack *stack) {
     if (stack->top == -1) {
-        // The stack is empty, handle the error
         return 0;
     }
     int num = stack->arr[stack->top];
@@ -42,7 +39,6 @@ int stackPop(Stack *stack) {
 
 int stackPeek(Stack *stack) {
     if (stack->top == -1) {
-        // The stack is empty, handle the error
         return 0;
     }
     return stack->arr[stack->top];
