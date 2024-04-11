@@ -1,3 +1,5 @@
+//USING SINGLE QUEUE
+
 class MyStack {
     Queue<Integer> queue;
     
@@ -32,6 +34,7 @@ class MyStack {
 }
 
 /*
+USING TWO QUEUE
 
 class MyStack {
     Queue<Integer> queue1;
@@ -51,8 +54,8 @@ class MyStack {
            queue2.add(queue1.remove());
        }
        int a=queue1.remove();
-       while(!queue2.isEmpty){
-            queue1.add(queue.remove());
+       while(!queue2.isEmpty()){
+            queue1.add(queue2.remove());
        }
        return a;
     }
@@ -73,9 +76,8 @@ class MyStack {
         return queue1.isEmpty();
     }
 }
-
-
 */
+    
 /**
  * Your MyStack object will be instantiated and called as such:
  * MyStack obj = new MyStack();
