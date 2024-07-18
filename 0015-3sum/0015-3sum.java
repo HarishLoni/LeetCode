@@ -5,7 +5,7 @@ class Solution {
         }
         Arrays.sort(nums);
         HashSet<List<Integer>> set=new HashSet<>();
-        for(int i=0;i<nums.length;i++){
+        for(int i=0;i<nums.length-2;i++){
             int left=i+1;
             int right=nums.length-1;
             while(left<right){
