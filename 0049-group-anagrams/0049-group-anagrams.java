@@ -16,10 +16,12 @@ class Solution {
             map.get(key).add(s);
         }
         
-        List<List<String>> result=new ArrayList<>();
-        for(Map.Entry<String,List<String>> s:map.entrySet()){
-            result.add(s.getValue());
-        }
-        return result;
+        // List<List<String>> result=new ArrayList<>();
+        // for(Map.Entry<String,List<String>> s:map.entrySet()){
+        //     result.add(s.getValue());
+        // }
+        // return result;
+        
+        return new ArrayList<>(map.values());
     }
 }
