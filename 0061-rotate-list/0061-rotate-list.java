@@ -9,17 +9,6 @@
  * }
  */
 class Solution {
-    public ListNode find(ListNode temp,int n){
-        int count=1;
-        while(temp!=null){
-            if(count==n){
-                return temp;
-            }
-            temp=temp.next;
-            count++;
-        }
-        return temp;
-    }
     
     public ListNode rotateRight(ListNode head, int k) {
         if (head == null || head.next == null || k == 0) {
@@ -38,11 +27,13 @@ class Solution {
         if(k==0){
             return head;
         }
-       
-        
+      
         last.next=head;
-        ListNode newlast=find(head,n-k);
+        ListNode newlast=head;
         
+        for(int i=1;i<n-k;i++){
+            newlast=newlast.next;
+        }
         head=newlast.next;
         newlast.next=null;
         
