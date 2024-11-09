@@ -9,12 +9,12 @@ class Solution {
     }
     
     public static void solve(int[] nums,List<List<Integer>> res,List<Integer> temp,int i){
-        if(res.contains(temp)){
-            return;
-        }
         res.add(new ArrayList<>(temp));
         
         for(int j=i;j<nums.length;j++){
+            if(j!=i && nums[j]==nums[j-1]){
+                continue;
+            }
             temp.add(nums[j]);
             solve(nums,res,temp,j+1);
             temp.remove(temp.size()-1);
